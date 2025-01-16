@@ -42,8 +42,12 @@ class C extends A{
 		this.e = e;
 		this.f = f;
 	}
-	
 }
+
+// 상속 받은 자식 클래스
+// 1. 부모 클래스의 필드나 매서드를 바로 접근 가능
+// 2. 상속은 다 한번만 허용한다.
+
 public class _01상속 {
 	
 	public static void main(String[] args) {
@@ -53,9 +57,13 @@ public class _01상속 {
 		System.out.println(b.a.a);
 		System.out.println(b.a.b);
 		System.out.println("--------------");
+		
+		A a = new A();
+		
 		C c = new C(100, 200);
 		System.out.println(c.a);
 		System.out.println(c.b);
+		
 	}
 	
 }
