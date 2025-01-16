@@ -134,7 +134,7 @@ public class _01도형 {
 		for(Shape s : list) {
 			if(s instanceof Circle) {
 			s.draw();
-			System.out.println(s.toString());
+			System.out.println(s);
 			System.out.println("--------------");
 			}
 		}
