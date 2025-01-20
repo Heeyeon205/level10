@@ -40,6 +40,8 @@ public class _02enum개념 {
 		System.out.println(btn2.getSpace());
 		btn2.setSpace(btn2.getSpace().DOUBLE);
 		btn2.changeButtonMode();
+		System.out.println(btn2.getMode());
+		System.out.println(btn2.getSpace());
 	}
 
 }
