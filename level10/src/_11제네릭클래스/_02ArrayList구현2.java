@@ -1,7 +1,5 @@
 package _11제네릭클래스;
 
-import java.util.Arrays;
-
 class MyArrayList<T> {
 	private T[] arr;
 	private static final int DEFAULT_CAPACITY = 10;
