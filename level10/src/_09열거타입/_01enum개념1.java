@@ -1,6 +1,7 @@
 package _09열거타입;
 
-// 열거타입 enumeration type : 상수 모음집
+// [열거타입 enumeration type] : 상수 모음집
+// 	- 열거 값은 자동으로 static final 상수로 취급된다.
 
 enum ButtonMode {
 	LIGHT, DARK
