@@ -42,6 +42,14 @@ public class MemberDAO {
 		System.out.println("해당 ID는 없는 ID입니다.");
 		return false;
 	}
+	
+	public void addMember(String id, String pw, String name) {
+		mList.add(new Member(id, pw, name));
+	}
+	
+	public void setMember(int idx, String id, String pw, String newName) {
+		mList.set(idx, new Member(id, pw, newName));
+	}
 
 	public boolean isMatch(String id, String pw) {
 		for(int i = 0; i < mList.size(); i++) {

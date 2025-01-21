@@ -11,7 +11,7 @@ class Person implements Comparable<Person> {
 	private int no;
 	private String name;
 	private int age;
-	
+
 	public Person(String name, int age) {
 		this.no = ++lastNo;
 		this.name = name;
@@ -26,32 +26,38 @@ class Person implements Comparable<Person> {
 	@Override
 	public int compareTo(Person o) {
 //		return name.compareTo(o.name);	// 이름순 정렬
-		
-		if(no > o.no) {	// 번호순 정렬
+		if (no > o.no) { // 번호순 정렬
 			return 1;
-		}else {
+		} else {
 			return -1;
 		}
 	}
-	
+
 	public int getNo() {
 		return no;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public int getAge() {
 		return age;
 	}
 }
 
 class PersonComp implements Comparator<Person> {
-	enum SortBy {NO, NAME, AGE};
-	enum SortDir{ASC, DESC}
-	
+	enum SortBy {
+		NO, NAME, AGE
+	};
+
+	enum SortDir {
+		ASC, DESC
+	}
+
 	private SortBy sortBy;
 	private SortDir sortDir;
-	
+
 	public PersonComp(SortBy sortBy, SortDir sortDir) {
 		super();
 		this.sortBy = sortBy;
@@ -61,10 +67,16 @@ class PersonComp implements Comparator<Person> {
 	@Override
 	public int compare(Person o1, Person o2) {
 		int result = 0;
-		switch(sortBy) {
-		case NO : result = o1.getNo() > o2.getNo() ? 1 : -1; break;
-		case NAME : result = o1.getName().compareTo(o2.getName()); break;
-		case AGE : result = o1.getAge() > o2.getAge() ? 1 : -1; break;
+		switch (sortBy) {
+		case NO:
+			result = o1.getNo() > o2.getNo() ? 1 : -1;
+			break;
+		case NAME:
+			result = o1.getName().compareTo(o2.getName());
+			break;
+		case AGE:
+			result = o1.getAge() > o2.getAge() ? 1 : -1;
+			break;
 		}
 		return result * (sortDir == sortDir.ASC ? 1 : -1);
 	};
@@ -73,37 +85,34 @@ class PersonComp implements Comparator<Person> {
 public class _07비교하기 {
 
 	public static void main(String[] args) {
-		
+
 		Person[] pList = {
-				 new Person ("홍길동" , 20),
-				 new Person ("전우치" , 10),
-				 new Person ("임꺽정" , 28),
-				new Person ("스폰지밥" , 32),
-				new Person ("뚱이" , 18),
-				 new Person ("개똥이" , 23)	
-		};
-		
-		TreeSet[] treeSets =  {
-			new TreeSet<>(),
-			new TreeSet<>( new PersonComp(PersonComp.SortBy.NO, PersonComp.SortDir.DESC)),
-			new TreeSet<>( new PersonComp(PersonComp.SortBy.AGE, PersonComp.SortDir.ASC)),
-			new TreeSet<>( new PersonComp(PersonComp.SortBy.NAME, PersonComp.SortDir.DESC)),
-		};
-		
-		for(Person p : pList) {
-			for(TreeSet ts : treeSets) {
+				new Person("홍길동", 20), 
+				new Person("전우치", 10), 
+				new Person("임꺽정", 28), 
+				new Person("스폰지밥", 32),
+				new Person("뚱이", 18), 
+				new Person("개똥이", 23) };
+
+		TreeSet[] treeSets = { new TreeSet<>(),
+				new TreeSet<>(new PersonComp(PersonComp.SortBy.NO, PersonComp.SortDir.DESC)),
+				new TreeSet<>(new PersonComp(PersonComp.SortBy.AGE, PersonComp.SortDir.ASC)),
+				new TreeSet<>(new PersonComp(PersonComp.SortBy.NAME, PersonComp.SortDir.DESC)), };
+
+		for (Person p : pList) {
+			for (TreeSet ts : treeSets) {
 				ts.add(p);
 			}
 		}
 		System.out.println("=============");
-		
-		for(TreeSet ts : treeSets) {
-			for(Object p : ts) {
+
+		for (TreeSet ts : treeSets) {
+			for (Object p : ts) {
 				System.out.println(p);
 			}
 			System.out.println("------------------");
 		}
-		
+
 	}
 
 }

@@ -26,7 +26,6 @@ public class _06반복자iterator {
 //		list3.remove(3);
 //		System.out.println(list3);
 		
-		
 //		이 방법으론 값을 삭제할 수 없다.
 		for(Integer num : list3) {
 //			if(num == 3) {
@@ -35,12 +34,10 @@ public class _06반복자iterator {
 			System.out.println(list3);
 		}
 		
-		
 		Iterator<Integer> itor = list3.iterator();
 //		itor.next();
 //		System.out.println(itor.next());
 //		System.out.println(itor.next());
-		
 		
 		// Set에서 특정 값을 삭제하는 방법 (인덱스가 없기 때문에)
 		while(itor.hasNext()) {
@@ -49,7 +46,6 @@ public class _06반복자iterator {
 			}
 		}
 		System.out.println(list3);
-		
 		
 		Map<Integer, String> list4 = new HashMap<>();
 		list4.put(1, "1");

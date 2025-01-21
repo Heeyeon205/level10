@@ -4,12 +4,10 @@ import java.util.ArrayList;
 
 public class ActionInsert implements Action{
 	private Utils utils;
-	private ArrayList<Member> mList;
 	private MemberDAO mDao;
 
 	public ActionInsert() {
 		utils = Utils.getInstance();
-		mList = MemberDAO.getMemberList();
 		mDao = MemberDAO.getInstance();
 	}
 
@@ -20,7 +18,7 @@ public class ActionInsert implements Action{
 		if(mDao.isDupId(id)) return;
 		String pw = utils.getString("PW 입력: ");
 		String name = utils.getString("이름 입력: ");
-		mList.add(new Member(id, pw, name));
+		mDao.addMember(id, pw, name);
 		System.out.printf("ID: %s, %s님 회원 가입 완료!\n", id, name);
 	}
 	
