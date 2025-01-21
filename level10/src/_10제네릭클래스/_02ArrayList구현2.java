@@ -1,4 +1,4 @@
-package _11제네릭클래스;
+package _10제네릭클래스;
 
 class MyArrayList<T> {
 	private T[] arr;

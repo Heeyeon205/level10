@@ -1,4 +1,4 @@
-package _09다형성실습;
+package _05추상화;
 
 import java.util.Random;
 
@@ -93,7 +93,7 @@ class Triangle extends Shape {
 	}
 }
 
-public class _01도형 {
+public class _03도형문제 {
 
 	public static void main(String[] args) {
 

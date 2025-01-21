@@ -1,4 +1,4 @@
-package _13Object클래스;
+package _12Object클래스;
 
 class Bag { 
 	String contains;

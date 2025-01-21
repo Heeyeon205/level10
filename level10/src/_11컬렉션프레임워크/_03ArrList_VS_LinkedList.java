@@ -1,4 +1,4 @@
-package _12컬렉션프레임워크;
+package _11컬렉션프레임워크;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

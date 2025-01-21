@@ -1,4 +1,4 @@
-package _12컬렉션프레임워크;
+package _11컬렉션프레임워크;
 
 import java.util.Comparator;
 import java.util.TreeSet;

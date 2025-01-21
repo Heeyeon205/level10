@@ -1,4 +1,4 @@
-package _10열거타입;
+package _09열거타입;
 
 class Button2 {
 	

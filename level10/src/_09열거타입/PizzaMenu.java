@@ -1,4 +1,4 @@
-package _10열거타입;
+package _09열거타입;
 
 public enum PizzaMenu {
 	PP("페퍼로니피자", 10000, 0),

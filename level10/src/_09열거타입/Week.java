@@ -1,4 +1,4 @@
-package _10열거타입;
+package _09열거타입;
 
 // 상수 모음집: public static final 자동으로 붙여준다.
 
