@@ -11,7 +11,7 @@ class InputMachine implements Runnable {
 
 	@Override
 	public void run() {
-		System.out.println("[stopwatch]");
+		System.out.println("[아무 키를 누르면 스톱워치 시작]");
 		input = sc.next().charAt(0);
 	}
 }
@@ -26,6 +26,7 @@ class StopWatch implements Runnable {
 		SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
 		LocalTime startTime = LocalTime.now();
 		while (true) {
+//			System.out.println(InputMachine.input);
 			if (InputMachine.input == 'q') {
 				LocalTime endTime = LocalTime.now();
 				Duration result = Duration.between(startTime, endTime);
@@ -40,16 +41,20 @@ class StopWatch implements Runnable {
 				System.out.println("[스톱워치 종료]");
 				return;
 			}
-			if (InputMachine.input == 'h') {
-
-			} else {
+			if (InputMachine.input == 'h' || InputMachine.input == 0) {
+					try {
+						Thread.sleep(1);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				continue;
+			}
 				long preTime = System.currentTimeMillis();
 				System.out.println(sdf.format(preTime) + " (" + ++time + " sec)");
 				try {
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
-				}
 			}
 		}
 	}
